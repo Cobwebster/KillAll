@@ -1,0 +1,8 @@
+main: com.swiftpenguin.killall.MainClass
+name: KillAll
+version: 1.0
+author: "Cobwebster"
+api: ["1.0.0"]
+
+load: POSTWORLD
+description: Just a killall command
