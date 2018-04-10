@@ -14,18 +14,17 @@ public class KillAllCmd extends Command {
         this.setPermission("killall.use");
     }
 
-    int amount;
+    private int amount;
 
     public boolean execute(CommandSender sender, String commandLabel, String[] args) {
         if (sender.hasPermission(this.getPermission()) || sender.isOp()) {
 
             int amount = 0;
-
             Player player = (Player) sender;
 
             for (Entity entity : player.getLevel().getEntities()) {
                 if (!(entity instanceof Player)) {
-                    entity.kill();
+                    entity.getLevel().removeEntity(entity);
                     amount += 1;
                 }
             }
